@@ -1,0 +1,46 @@
+import java.util.*;
+public class Student {
+        String usn;
+        String name;
+        String branch;
+        long phone;
+        
+       void insert(String roll,String n, String br, long ph ){
+        usn=roll;
+        name=n;
+        branch=br;
+        phone=ph;
+    }
+       void display(){
+           System.out.println("------------------");
+           System.out.println("USN:"+usn);
+           System.out.println("Name:"+name);
+           System.out.println("Branch:"+branch);
+           System.out.println("Phone:"+phone);
+         
+       }
+        public static void main(String[] args) {
+            Student st[]=new Student[100];
+            Scanner sc=new Scanner(System.in);
+            
+            System.out.println("Enter the number of students:");
+            int n=sc.nextInt();
+            sc.nextLine();
+            for(int i=0;i<n;i++)
+                st[i]=new Student();
+            for (int j=0;j<n;j++){
+                System.out.println("Enter the USn, Name, Branch, Phone Number ");
+                String usn=sc.nextLine();
+                String name=sc.nextLine();
+                String branch=sc.nextLine();
+                long phone=sc.nextLong();
+                sc.nextLine();
+                st[j].insert(usn, name, branch, phone);
+            }
+            for(int m=0;m<n;m++){
+                System.out.printf("Student %d details are \n",m+1);
+                st[m].display();
+            }
+     
+    }
+}
